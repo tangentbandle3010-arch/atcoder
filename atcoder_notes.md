@@ -43,3 +43,4 @@ vector<int> v = {1, 3, 2, 3, 4};
 v.erase(remove(v.begin(), v.end(), 3), v.end());
 // 結果: {1, 2, 4}
 ```
+
