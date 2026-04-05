@@ -17,14 +17,14 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  string S;
-  cin >> S;
-  for (auto x : S) {
-    if (count(S.begin(), S.end(), x) == 1){
-      cout << x << "\n";
-      return 0;
+  int N,K;
+  cin >> N >> K;
+  int ans = 0;
+  for (int i = 0; i < N; ++i) {
+    for (int j = 0; j < K; ++j) {
+      ans += (i+1)*100 + (j+1);
     }
   }
-  cout << -1 << "\n";
+  cout << ans << "\n";
   return 0;
 }

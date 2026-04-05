@@ -102,3 +102,34 @@ do {
     cout << s << endl;
 } while (next_permutation(s.begin(), s.end()));
 // 判定が後ろにあるため、最初の並びも漏らさず処理できる
+
+```
+
+---
+
+## 7. データのペア管理と比較: std::pair
+2つの関連する値を一つの「組」としてまとめ、それらを一括で管理・比較する手法。
+
+- 概要: `pair<T1, T2>` を用いて日付や座標などの関連データを一つに束ね、`vector` などのコンテナに格納して走査や検索を行う。
+- 数学的イメージ: 直積集合 $M \times D$ の要素 $(m, d)$ を定義し、入力された要素が特定のラベル集合 $G \subset M \times D$ に属するか（$(m, d) \in G$）を判定する操作。
+
+### 実装例：特定のペアが含まれているか検索する
+```cpp
+int m, d;
+cin >> m >> d;
+
+// pair の vector を定義し、あらかじめ対象の集合を用意する
+vector<pair<int, int>> gosekkulist = {
+    {1, 7}, {3, 3}, {5, 5}, {7, 7}, {9, 9}
+};
+
+bool isgosekku = false;
+for (const auto &date : gosekkulist) {
+    // make_pair や {m, d} で一時的なペアを作り、== で直接比較可能
+    if (make_pair(m, d) == date) isgosekku = true;
+}
+
+// 判定結果の出力
+cout << (isgosekku ? "Yes" : "No") << endl;
+
+```
