@@ -17,14 +17,13 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int N,K;
-  cin >> N >> K;
-  int ans = 0;
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < K; ++j) {
-      ans += (i+1)*100 + (j+1);
-    }
+  int A, B;
+  cin >> A >> B;
+  if(B % A == 0){
+    cout << A + B << "\n";
   }
-  cout << ans << "\n";
+  else{
+    cout << B - A << "\n";
+  }
   return 0;
 }
